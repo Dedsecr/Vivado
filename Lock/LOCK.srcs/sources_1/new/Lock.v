@@ -176,6 +176,11 @@ module Lock(
             Num5 <= 1;
             Num6 <= BlockTime;
         end
+        else if(SecurityMode_Start)
+        begin
+            Num5 = SecurityModeTime1;
+            Num6 = SecurityModeTime2;
+        end
         else
         begin
             Num5 <= 1;
