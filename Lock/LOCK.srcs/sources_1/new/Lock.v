@@ -47,15 +47,17 @@ module Lock(
     reg [7:0]PWD2;
     reg [7:0]PWD3;
     reg [7:0]PWD4;
-    reg [4:0]SecurityCounter;
-    reg [5:0]SecurityTimer;
-    reg Open, ToLow, ChangePWDMode, Determine2Open, Changed, SecurityMode, Block_Start;
-    wire CLK_1ms_CLK, CheckRes, CLK_1s_CLK, BlockTimeUp, BlockTime;
+    reg Open, ToLow, ChangePWDMode, Determine2Open, Changed, SecurityMode_Start, Block_Start;
+    wire CLK_1ms_CLK, CheckRes, CLK_1s_CLK, BlockTimeUp, SecurityModeTimeUp;
+    wire [9:0]BlockTime;
+    wire [9:0]SecurityModeTime1;
+    wire [9:0]SecurityModeTime2; 
     Clock_1ms CLK1ms(CLK, CLK_1ms_CLK);
     Clock_1s CLK1s(CLK, CLK_1s_CLK);
     DisplayNum DpNm(CLK, Num1, Num2, Num3, Num4, Num5, Num6, Figure1, Figure2, DN0, DN1);
     CheckPWD CPWD(Num1, Num2, Num3, Num4, PWD1, PWD2, PWD3, PWD4, CheckRes);
     Block Bl(CLK_1s_CLK, CLK_1ms_CLK, Block_Start, BlockTimeUp, BlockTime);
+    SecurityMode SeM(CLK_1s_CLK, CLK_1ms_CLK, SecurityMode_Start, SecurityModeTimeUp, SecurityModeTime1, SecurityModeTime2);
     initial
     begin
         Num1 = 1;
@@ -73,11 +75,9 @@ module Lock(
         PWD3 = 1;
         PWD4 = 1;
         ChangePWDMode = 0;
-        SecurityCounter = 0;
+        SecurityMode_Start = 0;
         ToLow = 0;
         Determine2Open = 0;
-        SecurityMode = 0;
-        SecurityTimer = 0;
         Block_Start = 0;
     end
     always@(negedge CLK_1ms_CLK)
