@@ -37,6 +37,7 @@ module SecurityMode(
         SecurityModeTimeUp = 0;
         SecurityModeTime1 = 0;
         SecurityModeTime2 = 0;
+        SecurityModeTime_Ori = 0;
     end
     always@(posedge CLK_1ms_CLK)
         SecurityModeTime_Ori = 30 - SecurityModeTimer;

@@ -35,6 +35,7 @@ module Block(
         BlockTimer = 0;
         BlockTimeUp = 0;
         BlockTime = 0;
+        BlockTime_Ori = 0;
     end
     always@(posedge CLK_1ms_CLK)
         BlockTime_Ori = 5 - BlockTimer;
