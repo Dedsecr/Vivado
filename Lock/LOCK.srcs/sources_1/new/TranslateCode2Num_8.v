@@ -51,5 +51,7 @@ module TranslateCode2Num_8(
             Num = 7'b1011111;
         else if(Code == 8'b10_000_000)
             Num = 7'b1110000;
+        else if(Code == 8'b00_000_000)
+            Num = 7'b0000001;
     end
 endmodule

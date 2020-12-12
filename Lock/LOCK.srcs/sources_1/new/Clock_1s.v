@@ -5,7 +5,7 @@
 // 
 // Create Date: 2020/12/07 22:17:42
 // Design Name: 
-// Module Name: Clock
+// Module Name: Clock_1s
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -30,15 +30,17 @@ module Clock_1s(
     reg [31:0]Counter;
     initial
     begin
-        Counter = 32'b0;
+        Counter = 0;
         CLK_1s = 0;
     end
     always@(posedge CLK)
-        if(Counter == 32'b100_000_000)
+    begin
+        if(Counter == 50000000)
         begin
-            Counter = 32'b0;
+            Counter = 0;
             CLK_1s = CLK_1s ^ 1;
         end
         else
             Counter = Counter + 1;
+    end
 endmodule

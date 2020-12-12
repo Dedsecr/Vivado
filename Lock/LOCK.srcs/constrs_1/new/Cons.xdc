@@ -19,13 +19,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports Input[1]]
 set_property PACKAGE_PIN R1 [get_ports Input[0]]
 set_property IOSTANDARD LVCMOS33 [get_ports Input[0]]
 
-
-
-
 set_property SEVERITY {Warning} [get_drc_checks LUTLP-1] 
 set_property SEVERITY {Warning} [get_drc_checks NSTD-1]
 set_property SEVERITY {Warning} [get_drc_checks UCIO-1]
-
 
 set_property PACKAGE_PIN B4 [get_ports Figure1[6]]
 set_property IOSTANDARD LVCMOS33 [get_ports Figure1[6]]
@@ -72,32 +68,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports DN1[2]]
 set_property PACKAGE_PIN G6 [get_ports DN1[3]]
 set_property IOSTANDARD LVCMOS33 [get_ports DN1[3]]
 
-
-
-
-set_property PACKAGE_PIN F6 [get_ports Status[7]]
-set_property IOSTANDARD LVCMOS33 [get_ports Status[7]]
-set_property PACKAGE_PIN G4 [get_ports Status[6]]
-set_property IOSTANDARD LVCMOS33 [get_ports Status[6]]
-set_property PACKAGE_PIN G3 [get_ports Status[5]]
-set_property IOSTANDARD LVCMOS33 [get_ports Status[5]]
-set_property PACKAGE_PIN J4 [get_ports Status[4]]
-set_property IOSTANDARD LVCMOS33 [get_ports Status[4]]
-set_property PACKAGE_PIN H4 [get_ports Status[3]]
-set_property IOSTANDARD LVCMOS33 [get_ports Status[3]]
-set_property PACKAGE_PIN J3 [get_ports Status[2]]
-set_property IOSTANDARD LVCMOS33 [get_ports Status[2]]
-set_property PACKAGE_PIN J2 [get_ports Status[1]]
-set_property IOSTANDARD LVCMOS33 [get_ports Status[1]]
-set_property PACKAGE_PIN K2 [get_ports Status[0]]
-set_property IOSTANDARD LVCMOS33 [get_ports Status[0]]
-
-
-set_property PACKAGE_PIN K1 [get_ports Open]
-set_property IOSTANDARD LVCMOS33 [get_ports Open]
-set_property PACKAGE_PIN K3 [get_ports CheckRes]
-set_property IOSTANDARD LVCMOS33 [get_ports CheckRes]
-
 set_property PACKAGE_PIN V1 [get_ports LockButton]
 set_property IOSTANDARD LVCMOS33 [get_ports LockButton]
 set_property PACKAGE_PIN R11 [get_ports ChangeButton]
@@ -106,6 +76,10 @@ set_property IOSTANDARD LVCMOS33 [get_ports ChangeButton]
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets LockButton]
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets ChangeButton]
 
+set_property PACKAGE_PIN K3 [get_ports Alarm_Out]
+set_property IOSTANDARD LVCMOS33 [get_ports Alarm_Out]
 
-set_property PACKAGE_PIN J5 [get_ports Block_Start]
-set_property IOSTANDARD LVCMOS33 [get_ports Block_Start]
+set_property PACKAGE_PIN H6 [get_ports Status1]
+set_property IOSTANDARD LVCMOS33 [get_ports Status1]
+set_property PACKAGE_PIN H5 [get_ports Status2]
+set_property IOSTANDARD LVCMOS33 [get_ports Status2]

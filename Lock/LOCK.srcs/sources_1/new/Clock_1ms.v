@@ -30,15 +30,17 @@ module Clock_1ms(
     reg [31:0]Counter;
     initial
     begin
-        Counter = 32'b0;
+        Counter = 0;
         CLK_1ms = 0;
     end
     always@(posedge CLK)
-        if(Counter == 32'b100_000)
+    begin
+        if(Counter == 50000)
         begin
-            Counter = 32'b0;
+            Counter = 0;
             CLK_1ms = CLK_1ms ^ 1;
         end
         else
             Counter = Counter + 1;
+    end
 endmodule

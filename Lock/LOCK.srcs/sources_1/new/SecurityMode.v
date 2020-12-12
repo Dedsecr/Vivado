@@ -25,7 +25,8 @@ module SecurityMode(
     );
     input CLK_1s_CLK, CLK_1ms_CLK, SecurityMode_Start;
     output SecurityModeTimeUp;
-    output SecurityModeTime;
+    output [9:0]SecurityModeTime1;
+    output [9:0]SecurityModeTime2;
     reg SecurityModeTimeUp;
     reg [7:0]SecurityModeTimer;
     reg [9:0]SecurityModeTime1;

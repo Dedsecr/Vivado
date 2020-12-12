@@ -55,5 +55,7 @@ module TranslateCode2Num_10(
             Num = 7'b1111111;
         else if(Code == 10'b1_000_000_000)
             Num = 7'b1111011;
+        else if(Code == 10'b0_000_000_000)
+            Num = 7'b0000001;
     end
 endmodule
