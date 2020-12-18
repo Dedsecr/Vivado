@@ -21,7 +21,7 @@
 
 
 module Lock(
-    CLK, Input, Figure1, Figure2, ChangeButton, LockButton, DN0, DN1, Status1, Status2, Alarm_Out
+    CLK, Input, ChangeButton, LockButton, Figure1, Figure2, DN0, DN1, Status1, Status2, Alarm_Out
     );
     input CLK;
     input [7:0]Input;

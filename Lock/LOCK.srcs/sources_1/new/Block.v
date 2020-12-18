@@ -23,7 +23,7 @@
 module Block(
     CLK_1s_CLK, CLK_1ms_CLK, Block_Start, BlockTimeUp, BlockTime
     );
-    input CLK_1s_CLK, CLK_1ms_CLK, Block_Start;
+    input CLK_1s_CLK, CLK_1ms_CLK, Block_Start;//
     output BlockTimeUp;
     output BlockTime;
     reg BlockTimeUp;

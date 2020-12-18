@@ -22,25 +22,27 @@
 
 module sim_lock(
     );
-    reg [9:0]HWInput;
+    reg [7:0]Input;
     wire [6:0]Figure1;
     wire [6:0]Figure2;
     wire [3:0]DN0;
     wire [3:0]DN1;
-    reg CLK;
-    wire Changed;
-    Lock L(HWInput, Figure1, Figure2, DN0, DN1, Changed);
+    reg CLK, ChangeButton, LockButton;
+    wire Status1, Status2, Alarm_Out;
+    Lock L(CLK, Input, ChangeButton, LockButton, Figure1, Figure2, DN0, DN1, Status1, Status2, Alarm_Out);
     initial
         begin
-            HWInput = 1;
+            Input = 0;
             CLK = 0;
         end
     always #1
         CLK = CLK + 1;
-    always@(posedge CLK)
+    always #200000000
     begin
-        HWInput = HWInput << 1;
-        if(HWInput == 0)
-            HWInput = 1;
+        LockButton = 1;
+        #200000000 LockButton = 0;
+        #200000000 Input = 8'b100_000_00;
+        #200000000 Input = 8'b000_000_00;
+        #200000000 Input = 8'b000_000_00;
     end
 endmodule
